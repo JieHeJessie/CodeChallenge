@@ -1,17 +1,95 @@
-/* line 8, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+@charset "UTF-8";
+/* line 14, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+.dashed-box {
+  border: dashed 2px;
+  border-color: #E6E6E6; }
+
+/* line 19, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+.box {
+  border: solid 1px;
+  border-color: #E6E6E6;
+  margin: 2rem;
+  border-radius: 5px;
+  height: 28rem; }
+
+/* line 28, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
 .app {
-  margin-left: 20rem; }
+  margin-left: 27rem; }
+  /* line 30, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app h3 {
+    margin-bottom: 2rem;
+    color: #707070;
+    text-align: center; }
+  /* line 36, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app .image img {
+    width: 100%;
+    height: 100%; }
+  /* line 42, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app button {
+    margin-bottom: 1rem;
+    background-color: #E3002B;
+    border-color: #E3002B; }
+  /* line 47, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem; }
 
-/* line 12, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+/* line 57, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
 .title {
-  text-align: center; }
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  color: #E3002B;
+  font-weight: bold;
+  font-size: 5rem; }
 
-/* line 16, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+/* line 66, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
 .container {
   text-align: center; }
 
-/* line 20, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
-.dashed-box {
-  border: dashed 1px; }
+/* line 70, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+.rea-logo {
+  width: 7%; }
+
+/* line 74, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+.btn-style {
+  text-align: center; }
+
+/*----------------------------------------responsive design--------------------------------------*/
+@media screen and (max-width: 992px) {
+  /* line 81, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  html {
+    font-size: 80%;
+    /*10 ÷ 16 × 100% = 62.5%*/ }
+  /* line 82, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app {
+    margin-left: 10rem; } }
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 89, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  html {
+    font-size: 90%;
+    /*10 ÷ 16 × 100% = 62.5%*/ }
+  /* line 90, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app {
+    margin-left: 20rem; }
+  /* line 93, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .box {
+    height: 20rem; } }
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  /* line 98, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  html {
+    font-size: 94%;
+    /*10 ÷ 16 × 100% = 62.5%*/ }
+  /* line 99, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .app {
+    margin-left: 20rem; }
+  /* line 102, ../../Users/jhe/Desktop/rea_code_challenge/src/scss/style.scss */
+  .box {
+    height: 23rem; } }
 
 /*# sourceMappingURL=style.css.map */

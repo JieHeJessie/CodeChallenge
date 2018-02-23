@@ -2,86 +2,100 @@ import React, { Component } from 'react';
 import ResultList from './components/ResultList';
 import SavedPropList from './components/SavedPropList';
 import mockData from './mockdata.json';
+import reaLogo from './asset/rea_logo.jpg';
 
-import {Row, Col,Button} from 'reactstrap';
+import {Row, Col, Button} from 'reactstrap';
 
 
 class App extends Component {
 
-  constructor(props) {
+    constructor(props) {
         super(props);
         this.results = mockData.results;
         this.saved = mockData.saved;
         this.state = {
-          showAddButton: 'none',
-            
+            showAddButton: 'none',
+            showRemoveButton: 'none',
         }
-        this.getResultsData=this.getResultsData.bind(this);
-    }
-
-  getResultsData() {
-        return this.results.map((data, index) => (
-            <div>heheh</div>
-        ));
-    }
-
-
-    addProperty(id) {
-      console.log('test1');
-        this.saved.push(this.results.find(item => item.id === id));
-        this.results = this.results.filter(function(item) {
-            return item.id !== id;
-        });
     }
 
     removeProperty(id) {
-        this.results.push(this.saved.find(item => item.id === id));
+        /*this.results.push(this.saved.find(item => item.id === id));*/
         this.saved = this.saved.filter(function(item) {
             return item.id !== id;
         });
+        
     }
 
+    getButton(id){
+        if(this.saved.find(item => item.id === id)){
+            return (<Button disabled>Saved</Button>);
+        }else if(this.state.showAddButton === id){
+            return (
+                <Button onClick={() => 
+                    this.saved.push(
+                        this.results.find(item => item.id === id))}>Add Property
+                </Button>);
+        }else{
+            return null;
+        }
+    }
 
-  render() {
-
-    return (
-      <div >
-            <h1 className="title">CODE CHALLENGE</h1>
-            <Row className="app">
-                <Col xl="4" style={{border: '2px dashed #e1e1e1'}} >
-                     
-                    {
-                        this.results.map((d,i)=>{
-                            return(
-                              <div style={{border: '2px dashed #e1e1e1'}} onMouseOver={() => this.setState({showAddButton: d.id})}>
-                                <ResultList key={i} data={d} />
-                                {this.state.showAddButton === d.id ? (<Button color="primary" style={{borderRadius: '20px'}} onClick={() => this.addProperty(d.id)}>add Property</Button>) : null}
-                              </div>
-                                
-                            )
-                        })
-                    }
-                      
-                </Col>
+    render() {
+        return (
+            <div >
                 
-                <Col xl="4" style={{border: '2px dashed #e1e1e1' , marginLeft: 150}}>
-                    {
-                        this.saved.map((d,i)=>{
-                            return(
-                              <div style={{border: '2px dashed #e1e1e1'}}>
-                                <ResultList key={i} data={d} />
-                                <Button color="primary" style={{borderRadius: '20px'}} onClick={() => this.removeProperty(this.d.id)}>Remove Property</Button>
-                              </div>
-                                
-                            )
-                        })
-                    }
-                </Col>               
-            </Row>
+                <h1 className="title"><img src={reaLogo} className="rea-logo"/> CODE CHALLENGE</h1>
+                <Row className="app">
+                    <Col xl="4" lg="4" md="12" className="result">
+                        <h3>Results</h3>
+                        <div className=" dashed-box">
 
-      </div>
-    );
-  }
+                            {
+                                this.results.map((data,index) => {
+                                    return(
+                                        <div className="box" onMouseOver={() => this.setState({showAddButton: data.id})}>
+                                            <ResultList key={index} data={data}/>
+                                            <div className="btn-style">
+                                                {this.getButton(data.id)}
+                                            </div>
+                                        </div>
+                                    )
+                                }) 
+                            }
+
+                        </div>
+
+                    </Col>
+
+                    <Col xl="4" lg="4" md="12" className="save">
+                        <h3>Saved Properties</h3>
+                        <div className=" dashed-box">
+
+                            {
+                                this.saved.map((data,index) => {
+                                    return(
+                                        <div className="box" onMouseOver={() => this.setState({showRemoveButton: data.id})}>
+                                            <SavedPropList key={index} data={data}/>
+                                            <div className="btn-style">
+                                                {this.state.showRemoveButton === data.id ? (<Button onClick={() => this.removeProperty(data.id)}>Remove Property</Button>) : null}
+                                            </div>
+
+
+                                        </div>
+
+                                    )
+                                })
+                            }
+
+                        </div>
+
+                    </Col>               
+                </Row>
+
+            </div>
+        );
+    }
 }
 
 export default App;

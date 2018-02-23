@@ -1,22 +1,105 @@
 //VARIABLES
+$red-1: #E3002B;
+$grey-1: #E6E6E6;
+$grey-2: #707070;
+
+
 
 //RESPONSIVE DESIGN VARIABLES
+$screen-md:992px;
+$screen-lg: 1200px;
+$screen-xl: 1600px;
 
 //REUSE STYLE
+.dashed-box{
+    border: dashed 2px;
+    border-color: $grey-1;
+}
+
+.box{
+    border: solid 1px;
+    border-color: $grey-1;
+    margin: 2rem;
+    border-radius: 5px;
+    height: 28rem;
+}
 
 //BASIC STYLE
 .app{
-    margin-left: 22rem;
+    margin-left: 27rem;
+    h3{
+        margin-bottom: 2rem;
+        color: $grey-2;
+        text-align: center;
+    }
+    .image{
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    button{
+        margin-bottom: 1rem;
+        background-color: $red-1;
+        border-color: $red-1;
+    }
+    .price{
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 0.5rem;
+    }
+    
 }
 
 .title{
     text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    color: $red-1;
+    font-weight: bold;
+    font-size: 5rem;
 }
 
 .container{
     text-align: center;
 }
 
-.dashed-box{
-    border: dashed 1px;
+.rea-logo{
+    width: 7%;
+}
+
+.btn-style{
+    text-align: center;
+}
+
+/*----------------------------------------responsive design--------------------------------------*/
+                 
+@media screen and (max-width:$screen-md) {
+     html {font-size: 80%;/*10 ÷ 16 × 100% = 62.5%*/}
+    .app{
+        margin-left: 10rem;
+    }
+    
+}
+
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+     html {font-size: 90%;/*10 ÷ 16 × 100% = 62.5%*/}
+    .app{
+        margin-left: 20rem;
+    }
+    .box{
+        height: 20rem;
+    }
+}
+@media screen and (min-width: $screen-lg) and (max-width: $screen-xl) {
+     html {font-size: 94%;/*10 ÷ 16 × 100% = 62.5%*/}
+    .app{
+        margin-left: 20rem;
+    }
+    .box{
+        height: 23rem;
+    }
 }
