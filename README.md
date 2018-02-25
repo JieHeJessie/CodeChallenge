@@ -14,6 +14,7 @@ Run the following command to startup the application
 ```
 git clone https://github.com/JieHeJessie/REAGroupCodeChallenge
 cd REAGroupCodeChallenge
+npm install
 npm start
 
 ```
