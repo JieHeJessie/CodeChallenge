@@ -12,7 +12,7 @@ In order to easily setup and manage all the development dependencies, setting up
 
 Run the following command to startup the application
 ```
-git clone https://github.com/JieHeJessie/REAGroupCodeChallenge
+git clone https://github.com/JieHeJessie/REAGroupCodeChallenge.git
 cd REAGroupCodeChallenge
 npm start
 
