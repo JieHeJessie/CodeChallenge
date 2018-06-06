@@ -1,4 +1,4 @@
-# REAGroupCodeChallenge
+# CodeChallenge
 
 This project is used to implement the "Add Properties" and "Remove Properties"
 
